@@ -1,0 +1,6 @@
+<div class="container m-4">
+    <h2 class="text-center m-3">My lists</h2>
+    <% @lists.each do |list| %>
+        <%= render "lists/list", list: list %>
+    <% end %>
+</div>

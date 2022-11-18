@@ -1,0 +1,15 @@
+<div style="background-image: url(<%= cl_image_path @list.photo.key, height: 300 %>); height: 300px;" class="d-flex justify-content-center">
+    <h1 class="text-white"><%= @list.name %></h1>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <% @list.bookmarks.each do |bookmark| %>
+            <%= render "bookmarks/show", bookmark: bookmark %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <%= link_to "New bookmark", new_list_bookmark_path(@list), class: "btn btn-primary m-2" %>
+    <%= link_to "Back to lists", lists_path, class: "btn btn-primary m-2" %>
+</div>
